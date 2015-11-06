@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Cube Party 2015 demo</title>
+	<meta charset="utf-8">
+	
+	<!-- Layers.css -->	
+	<!--<link href='css/layers.min.css' rel='stylesheet' type='text/css'>-->
+	<!--<link href='css/responsive.css' rel='stylesheet' type='text/css'>-->
+	
+	<!-- Style -->
+	<!--<link href='css/main.css' rel='stylesheet' type='text/css'>-->
+	
+	<!-- Minified -->
+	<link href='css/main.min.css' rel='stylesheet' type='text/css'>
+	
+	<!-- Web fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+	
+	<div id="menu" class="row row-intro dark">
+		<div class="row-content buffer">
+	
+			<h1 class="pageTitle squeeze"><a href="#">Cube Party 2015 <small>DEMO</small></a></h1>
+			<h3 class="pageTitle squeeze"><a href="#">Tomi Korkalainen</a></h3>
+	
+			<div class="excerpt">
+				<p class="squeeze-top">Run this demo using latest <a href="https://www.google.com/chrome" target="_blank" >Chrome</a> (preferred) or <a href="https://www.mozilla.org/firefox" target="_blank" >Firefox</a> browser. Watch Youtube version if the demo does not run properly on your machine.</p>
+			</div>
+
+			<div class="clear"></div>
+	
+			<div>
+				<div class="go">
+					<p><a id="demo" href="#" class="button disabled">Run realtime demo</a><a href="https://youtu.be/wp8JxhK8dDs" target="_blank" class="button secondary">Open YouTube video</a></p>
+					<p class="discreet">Visit <a href="https://github.com/tkorkalainen" target="_blank">GitHub</a> for source code.</p>
+				</div>
+			</div>
+
+			<div class="column six">
+				<h4>Libraries</h4>
+				<ul class="features">
+					<li><a href="http://threejs.org/" target="_blank" >three.js</a> - 3D library</li>
+					<li><a href="https://github.com/allouis/minivents/" target="_blank" >minivents.js</a> - event system</li>
+					<li><a href="https://jquery.com/" target="_blank" >jQuery</a> - JavaScript toolkit</li>
+					<li><a href="https://github.com/tweenjs/tween.js/" target="_blank" >tween.js</a> - tweening engine</li>
+					<li><a href="https://github.com/jsantell/dancer.js/" target="_blank" >dancer.js</a> - audio API</li>
+					<li><a href="http://eiskis.net/layers/" target="_blank" >Layers CSS</a> - CSS framework</li>
+				</ul>
+				
+				<h4>3D models</h4>
+				<ul class="features">
+					<li><a href="https://www.cgtrader.com/free-3d-models/character-people/fantasy/lucy-a-christian-angel-statue" target="_blank" >Angel statue</a> - Lucy A Christian Angel Statue by anavriN</li>
+					<li><a href="http://www.turbosquid.com/3d-models/free-max-mode-duck-toy/771140" target="_blank" >Rubber duck</a> - Rubber duck by Ultar3D</li>
+				</ul>
+				
+				<div class="clear"></div>
+			</div>
+
+			<div class="column six last">
+
+				<h4>Three.js plugins and shaders</h4>
+				<p>Various plugins and shaders and ideas from following persons were used to make this demo: </p>
+				<ul class="features">
+					<li><a href="https://github.com/alteredq" target="_blank" >AlteredQualia</a></li>
+					<li><a href="https://github.com/felixturner" target="_blank" >Felix Turner</a></li>
+					<li><a href="https://github.com/oosmoxiecode" target="_blank" >Klas</a></li>
+					<li><a href="https://github.com/zz85" target="_blank" >Joshua Koo</a></li>
+					<li><a href="https://github.com/bhouston" target="_blank" >Ben Houston</a></li>
+					<li><a href="https://github.com/angelxuanchang" target="_blank" >Angel Xuan Chang</a></li>
+					<li><a href="https://github.com/jbouny" target="_blank" >Jérémy Bouny</a></li>
+					<li><a href="http://www.decarpentier.nl/lens-distortion" target="_blank" >Gilliam de Carpentier</a></li>
+					<li><a href="http://bkcore.com/blog/3d/webgl-three-js-volumetric-light-godrays.html" target="_blank" >Thibaut Despoulain</a></li>
+					<li><a href="https://www.clicktorelease.com/blog/vertex-displacement-noise-3d-webgl-glsl-three-js" target="_blank" >Click To Release blog</a></li>
+				</ul>
+
+				<div class="clear"></div>
+			</div>
+
+	
+		</div>
+	</div>
+	
+	<div id="stats"></div>
+	<div id="canvas"></div>
+
+	<!-- Libraries -->
+	<script src="lib/minivents.min.js"></script>
+	<script src="lib/jquery-1.9.1.min.js"></script>
+	<script src="lib/Detector.js"></script>
+	<script src="lib/three.js"></script>
+	<script src='lib/stats.min.js'></script>
+	<script src='lib/tween.js'></script>
+	<script src='lib/dancer.js'></script>
+	<script src='lib/ExtraUtils.js'></script>
+	<script src='lib/water.js'></script>
+	<script src='lib/ribbons.js'></script>
+
+	<!-- Utils -->
+	<script src='lib/utils/ColorConverter.js'></script>
+	
+	<!-- Loaders -->
+	<script src='lib/loaders/DDSLoader.js'></script>
+	<script src='lib/loaders/MTLLoader.js'></script>
+	<script src='lib/loaders/OBJMTLLoader.js'></script>
+
+	<!-- Shader passes -->
+	<script src="lib/postprocessing/EffectComposer.js"></script>
+	<script src="lib/postprocessing/RenderPass.js"></script>
+	<script src="lib/postprocessing/MaskPass.js"></script>
+	<script src="lib/postprocessing/ShaderPass.js"></script>
+	<script src="lib/postprocessing/BloomPass.js"></script>
+
+	<!-- Shaders -->
+	<script src="lib/shaders/AdditiveBlendShader.js"></script>
+	<script src="lib/shaders/C64Shader.js"></script>
+	<script src="lib/shaders/ConvolutionShader.js"></script>
+	<script src="lib/shaders/CopyShader.js"></script>
+	<script src="lib/shaders/DitherShader.js"></script>
+	<script src="lib/shaders/FilmShader.js"></script>
+	<script src="lib/shaders/FishEyeShader.js"></script>
+	<script src="lib/shaders/GodRaysShader.js"></script>
+	<script src="lib/shaders/HorizontalBlurShader.js"></script>
+	<script src="lib/shaders/ParticleShader.js"></script>
+	<script src="lib/shaders/PixelateShader.js"></script>
+	<script src="lib/shaders/PlasmaShader.js"></script>
+	<script src="lib/shaders/SkyShader.js"></script>
+	<script src="lib/shaders/VerticalBlurShader.js"></script>
+	<script src="lib/shaders/WaveParticleShader.js"></script>
+	<script src="lib/shaders/WaveShader.js"></script>
+
+	<!-- Handlers -->
+	<script src="src/Main.js"></script>
+	<script src="src/AudioHandler.js"></script>
+	<script src="src/Director.js"></script>
+
+	<!-- Fonts -->
+	<script src="res/fonts/archive_regular.js"></script>
+
+	<!-- Scenes -->
+	<script src="src/Cube.js"></script>
+	<script src="src/Scene1.js"></script>
+	<script src="src/Scene2.js"></script>
+	<script src="src/Scene3.js"></script>
+	<script src="src/Scene4.js"></script>
+	<script src="src/Scene5.js"></script>
+	<script src="src/Scene6.js"></script>
+	
+	<!-- Three.js extension -->
+	<script src="src/AudioLoader.js"></script>
+	
+	<!-- Bind events -->
+	<script type="text/javascript">
+		$("#demo").bind("click", function() {
+			if (!$(this).hasClass("disabled"))
+			{
+				Main.init();
+			}
+		});
+	</script>
+
+</body>
+
+</html>
