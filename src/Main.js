@@ -76,7 +76,7 @@ var Main = function () {
 		};
 
 		var imageLoader = new THREE.ImageLoader(manager);
-		var modelLoader = new THREE.OBJMTLLoader(manager);
+		var modelLoader = new THREE.OBJLoader(manager);
 		
 		var audioLoader = new THREE.AudioLoader(manager);
 
@@ -88,11 +88,11 @@ var Main = function () {
 			audio.audio2 = object;
 		});
 		
-		modelLoader.load("res/models/statue.obj", "res/models/statue.mtl", function (object) {
+		modelLoader.load("res/models/statue.obj", function (object) {
 			models.statue = object;
 		});
 
-		modelLoader.load("res/models/duck.obj", "res/models/duck.mtl", function (object) {
+		modelLoader.load("res/models/duck.obj", function (object) {
 			models.duck = object;
 		});
 
