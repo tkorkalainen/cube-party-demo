@@ -18,6 +18,7 @@ Cube Party 2015 demo made by Tomi Korkalainen.
 
 Various plugins and shaders and ideas from following persons were used to make this demo:
 
+* [Mr.doob](https://github.com/mrdoob)
 * [AlteredQualia](https://github.com/alteredq)
 * [Felix Turner](https://github.com/felixturner)
 * [Klas](https://github.com/oosmoxiecode)
